@@ -110,7 +110,9 @@ func getMathMapping(data []byte, formulasIndexes []formulaCoords) map[string]str
 }
 
 func FromArticle(arcticlePath, destPath string) (text, error) {
-	if err := exec.Command(
+	// This code is not supposed to be foolproof.
+	// User can do smth dumb with pandoc if he wants
+	if err := exec.Command( //nolint:gosec
 		"pandoc",
 		arcticlePath,
 		"-o",
@@ -167,7 +169,9 @@ func (t text) GetData() (string, error) {
 }
 
 func (t text) ToASCII() error {
-	if err := exec.Command(
+	// This code is not supposed to be foolproof.
+	// User can do smth dumb with pandoc if he wants
+	if err := exec.Command( //nolint:gosec
 		"pandoc",
 		t.absolutePath,
 		"--ascii",
