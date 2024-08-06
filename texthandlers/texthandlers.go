@@ -158,7 +158,7 @@ func FromArticle(arcticlePath, destPath string) (text, error) {
 	}, nil
 }
 
-func (t text) getData() (string, error) {
+func (t text) GetData() (string, error) {
 	data, err := os.ReadFile(t.absolutePath)
 	if err != nil {
 		return "", err
@@ -166,7 +166,7 @@ func (t text) getData() (string, error) {
 	return string(data), nil
 }
 
-func (t text) toASCII() error {
+func (t text) ToASCII() error {
 	if err := exec.Command(
 		"pandoc",
 		t.absolutePath,
