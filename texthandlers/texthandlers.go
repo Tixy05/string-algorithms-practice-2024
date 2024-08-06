@@ -140,7 +140,9 @@ func FromArticle(arcticlePath, destPath string) (text, error) {
 	}
 	builder.Write(data[left:])
 
-	os.Truncate(destPath, 0)
+	if err := os.Truncate(destPath, 0); err != nil {
+		return text{}, err
+	}
 
 	if err := os.WriteFile(
 		destPath,
