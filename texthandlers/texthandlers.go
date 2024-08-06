@@ -82,6 +82,7 @@ func findMath(data []byte) ([]formulaCoords, error) {
 	return coords, nil
 }
 
+// fix dumb code (formula to hash-string conversion)
 func getMathMapping(data []byte, formulasIndexes []formulaCoords) map[string]string {
 	hasher := fnv.New64()
 	formulasMapping := make(map[string]string)
@@ -95,7 +96,8 @@ func getMathMapping(data []byte, formulasIndexes []formulaCoords) map[string]str
 		lettersHash := make([]byte, len(hash))
 		alphabet := "abcdefghijklmstupidity" // :)
 		for i := 0; i < len(hash); i++ {
-			res, _ := strconv.Atoi(string(hash[i]))
+			// no error check since hash[i] is always just a digit
+			res, _ := strconv.Atoi(string(hash[i])) //nolint:all
 			lettersHash[i] = alphabet[res]
 		}
 
