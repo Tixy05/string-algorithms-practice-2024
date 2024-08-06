@@ -166,7 +166,7 @@ func (t text) getData() (string, error) {
 	return string(data), nil
 }
 
-func (t text) toAscii() error {
+func (t text) toASCII() error {
 	if err := exec.Command(
 		"pandoc",
 		t.absolutePath,
