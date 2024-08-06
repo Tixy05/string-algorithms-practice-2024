@@ -6,6 +6,8 @@ on:
   pull_request:
     branches: [main, algorithms]
 
+permissions: read-all
+
 jobs:
 
   audit:
