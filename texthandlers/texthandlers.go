@@ -21,7 +21,8 @@ type text struct {
 func RandomFromAlphabet(alphabet []byte, size int, absolutePath string) (text, error) {
 	var builder strings.Builder
 	for i := 0; i < size; i++ {
-		randIndex := rand.Intn(len(alphabet))
+		// No need to use strong RNG here
+		randIndex := rand.Intn(len(alphabet)) //nolint:gosec
 		letter := alphabet[randIndex]
 		builder.WriteByte(letter)
 	}
