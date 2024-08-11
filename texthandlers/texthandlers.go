@@ -48,10 +48,10 @@ func findMath(data []byte) ([]formulaCoords, error) {
 		current := data[i]
 		lookahead := data[i+1]
 
-		if current == '\\' && lookahead == '$' {
+		switch pair := string(current) + string(lookahead); pair {
+		case "\\$":
 			i += 2
-			continue
-		} else if current == '$' && lookahead == '$' {
+		case "$$":
 			if isRightDoubleDollarIndex {
 				indexes = append(indexes, i+1)
 			} else {
@@ -59,14 +59,12 @@ func findMath(data []byte) ([]formulaCoords, error) {
 			}
 			isRightDoubleDollarIndex = !isRightDoubleDollarIndex
 			i += 2
-			continue
-		} else if current == '$' && lookahead != '$' {
-			indexes = append(indexes, i)
-			i += 2
-			continue
+		default:
+			if current == '$' {
+				indexes = append(indexes, i)
+			}
+			i++
 		}
-
-		i++
 	}
 
 	if len(indexes)%2 != 0 {
