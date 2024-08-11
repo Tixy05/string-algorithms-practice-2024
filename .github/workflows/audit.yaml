@@ -2,9 +2,9 @@ name: Audit
 
 on:
   push:
-    branches: [main, algorithms]
+    branches: [main, algorithms, linter_corrections]
   pull_request:
-    branches: [main, algorithms]
+    branches: [main, algorithms, linter_corrections]
 
 permissions: read-all
 
