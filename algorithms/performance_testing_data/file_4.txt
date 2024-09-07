@@ -1,0 +1,36 @@
+While Linux was faster than Windows at 4K video encoding with Kvazaar, at 1080p encoding it flipped around and Windows 11 was faster. Presumably due to CPU frequency scaling driver/governor behavior differences between the two operating systems. With the video encoders I've seen a great deal of differing results if opting for non-default CPU frequency scaling governor / driver settings. But in any even at 1080p there continued to be greater uplift for the 7950X to 9950X on Linux by a few percent.
+Kvazaar benchmark with settings of Video Input: Bosphorus 1080p, Video Preset: Very Fast. Windows 11: Ryzen 9 9950X was the fastest.
+Kvazaar benchmark with settings of Video Input: Bosphorus 1080p, Video Preset: Ultra Fast. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+With 1080p ultra fast encoding, from the Ryzen 9 7950X to 9950X was a 4% difference on Windows 11 but with Ubuntu 24.04 LTS went up by 12%! Here Ubuntu Linux also returned to being faster than Windows 11 for this speedy 1080p encoding.
+Across Intel SVT-AV1 video encoding there was more uplift going from the Ryzen 9 7950X to 9950X on Ubuntu Linux than there was with Windows 11. In some cases there were regressions in performance from the 7950X to 9950X on Windows but under Ubuntu out-of-the-box were nice generational gains with AMD Zen 5. SVT-AV1 does make use of AVX-512 and does provide Windows reference binaries. With the extremely different results here it's possible that the SVT-AV1 encoder isn't as well tuned for Windows or some other AVX-512 related happening on Windows 11.
+SVT-AV1 benchmark with settings of Encoder Mode: Preset 5, Input: Bosphorus 1080p. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+SVT-AV1 benchmark with settings of Encoder Mode: Preset 8, Input: Bosphorus 1080p. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+SVT-AV1 benchmark with settings of Encoder Mode: Preset 13, Input: Bosphorus 1080p. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+SVT-AV1 was showing some of the most distinct differences between Windows 11 and Linux in this testing.
+x264 benchmark with settings of Video Input: Bosphorus 4K. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+x264 benchmark with settings of Video Input: Bosphorus 1080p. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+With the x264 video encodeer was also greater uplift from the 7950X to 9950X on Linux than on Windows 11.
+With Intel's Open Image Denoise library that is part of their oneAPI rendering toolkit, there was similar performance on both Windows 11 and Linux across both the Zen 4 and Zen 5 processors.
+OSPRay benchmark with settings of Benchmark: particle_volume/ao/real_time. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+OSPRay benchmark with settings of Benchmark: particle_volume/scivis/real_time. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+OSPRay benchmark with settings of Benchmark: particle_volume/pathtracer/real_time. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+But when turning to Intel's OSPRay ray-tracing engine and using the official binaries on both Windows and Linux, Ubuntu 24.04 LTS was seeing a hell of a lot more uplift out of the Ryzen 9 9950X than there was under Windows 11. OSPRay is another AVX-512 capable workload.
+OSPRay benchmark with settings of Benchmark: gravity_spheres_volume/dim_512/ao/real_time. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+OSPRay benchmark with settings of Benchmark: gravity_spheres_volume/dim_512/scivis/real_time. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+OSPRay benchmark with settings of Benchmark: gravity_spheres_volume/dim_512/pathtracer/real_time. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+In some OSPRay configurations there was similar AMD CPU generational uplift under Windows 11 and Linux but in other cases leaning clearly in favor of Linux performance.
+OSPRay Studio benchmark with settings of Camera: 1, Resolution: 4K, Samples Per Pixel: 1, Renderer: Path Tracer, Acceleration: CPU. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+OSPRay Studio benchmark with settings of Camera: 3, Resolution: 4K, Samples Per Pixel: 1, Renderer: Path Tracer, Acceleration: CPU. Ubuntu 24.04: Ryzen 9 9950X was the fastest
+OSPRay Studio benchmark with settings of Camera: 1, Resolution: 4K, Samples Per Pixel: 16, Renderer: Path Tracer, Acceleration: CPU. Ubuntu 24.04: Ryzen 9 9950X was the
+
+With the OSPRay Studio application and using the official binaries on each platform, Ubuntu 24.04 LTS was faster on both AMD Ryzen processors and tended to overall have slightly greater uplift going from the Ryzen 9 7950X to 9950X processors.
+With Windows 11 going from the Ryzen 9 7950X to 9950X was a 5% boost while on Ubuntu 24.04 LTS the performance went up by 9%. The Ubuntu 24.04 LTS raw performance was greater to the extent of a Ryzen 9 7950X on Linux outperforming the Ryzen 9 9950X on Windows.
+With ASTC texture compression was roughly similar results under Windows and Linux.
+Blender has long known to yield much faster CPU rendering on Linux than with Windows 11. This remained the case here with Ubuntu 24.04 LTS using the official Blender 4.2 binaries being significantly faster than Blender 4.2 on Windows. The relative uplift from the 7950X to 9950X was largely similar.
+With the proprietary Indigo renderer, going from the Ryzen 9 7950X to 9950X on Linux yielded roughly 1% more uplift for both scenes than was the Zen 4 to Zen 5 difference on Windows 11.
+Appleseed benchmark with settings of Scene: Emily. Ubuntu 24.04: Ryzen 9 9950X was the fastest.

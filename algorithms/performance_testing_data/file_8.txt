@@ -1,0 +1,77 @@
+Windows 11 vs. Ubuntu 24.04 Linux Performance For The AMD Ryzen 9 9950X
+Written by Michael Larabel in Operating Systems on 16 August 2024 at 01:00 PM EDT. Page 1 of 8. 105 Comments.
+
+With all of my AMD Ryzen 9900X and 9950X Linux benchmarking and Ryzen 5 9600X and Ryzen 7 9700X reviews as well, many have wondered if AMD Zen 5 is just really great on Linux, if Windows 11 is in particularly poor shape for these new AMD Ryzen 9000 series processors, if it's just the different/diverse benchmarks being run, or simply why are these new desktop CPUs running so well on Linux but less so with Windows?
+
+Windows 11 on AMD Ryzen
+
+Today's AMD Ryzen 9000 series testing is looking at the Windows 11 versus Linux performance for a few dozen benchmarks that are of similar quality and native to both Windows and Linux in seeing if one operating system is particularly better suited or not than the other. And to help determine if it's a Zen 5 specific problem to one OS or the other OS is better tailored for the very latest AMD Zen 5 processors, the prior generation Ryzen 9 7950X was also tested alongside the Ryzen 9 9950X.
+
+AMD Ryzen 9 9950X
+
+The AMD Ryzen 9 7950X and Ryzen 9 9950X were re-tested on the same exact system after carrying out a clean install of Microsoft Windows 11 Professional with all stable updates applied and then repeating the tests on the same hardware after carrying out a clean install of Ubuntu 24.04 LTS with all of its stable release updates applied. Thus a look at Windows 11 vs. Ubuntu Linux out-of-the-box on the Ryzen 9 7950X (Zen 4) and Ryzen 9 9950X (Zen 5) systems with 73 benchmarks.
+
+Ubuntu 24.04 LTS on AMD Ryzen
+
+The processors were running on an ASUS ROG STRIX Z670-E GAMING WIFI motherboard with newest 2204 BIOS, 2 x 16GB DDR5-6000 memory, WD_BLACK SN850X 2TB NVMe SSD, Radeon RX 7900 GRE, and a Cooler Master AIO liquid AIO liquid cooling setup each time. Differences in the system table below just come down to slight differences in how the various APIs expose the hardware/software information under each operating system.
+Windows 11 vs. Ubuntu Linux On AMD Ryzen 9 9950X
+
+A variety of 73 different mostly productive workloads were used and relying mostly on tests that offer official binaries for both Windows and Linux systems to rule out compiler differences. Similarly, gaming workloads were not explored in this article due to focusing just on the CPU performance today in wanting to rule out graphics driver / API differences between Windows and Linux for really trying to isolate if AMD Zen 4 vs. Zen 5 is better on Windows or Linux.
+
+So let's take a look at how I am seeing Windows 11 running on the Ryzen 9 9950X (and 7950X) with my productivity-minded tests against Ubuntu 24.04 LTS.
+
+The LuxCoreRenderer is open-source and provides official binaries on both Windows and Linux platforms. With the DLSC scene, going from the Ryzen 9 7950X to 9950X on Windows 11 meant a ~5% generational uplift and that was roughly the same as observed on Ubuntu 24.04 LTS. But the performance on Ubuntu Linux was faster for both the Ryzen 9 7950X and 9950X processors.
+LuxCoreRender benchmark with settings of Scene: Orange Juice, Acceleration: CPU. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+LuxCoreRender benchmark with settings of Scene: LuxCore Benchmark, Acceleration: CPU. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+LuxCoreRender benchmark with settings of Scene: Rainbow Colors and Prism, Acceleration: CPU. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+With other LuxCoreRender scenes there was similar generational improvements to the 7950X to 9950X on both Windows 11 and Ubuntu 24.04 LTS, but the Ubuntu performance continued running faster for raw performance on both these Zen 4 and Zen 5 processors.
+Embree benchmark with settings of Binary: Pathtracer ISPC, Model: Crown. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+With Intel's Embree ray-tracing kernels using the Intel ISPC built version on each OS, there was around an 8% performance uplift going from the 7950X to 9950X on each operating system. But the Ubuntu Linux performance continued to lead in raw performance to the extent of the Ryzen 9 7950X on Linux was similar to the Ryzen 9 9950X performance on Windows 11.
+Embree benchmark with settings of Binary: Pathtracer ISPC, Model: Asian Dragon. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+With the "Asian Dragon" scene being rendered by Embree binaries on each OS, under Linux was a greater generational uplift. Going from the Ryzen 9 7950X to 9950X on Windows was a 13.6% improvement but under Linux that was a 18.3% improvement while the Linux performance was also faster than Windows overall.
+Embree benchmark with settings of Binary: Pathtracer ISPC, Model: Asian Dragon Obj. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+The greater generational uplift on Ubuntu 24.04 LTS going from the Ryzen 9 7950X to 9950X was also observed on another render scene with Intel Embree.
+With WebP image encoding there were generational improvements on both Windows 11 and Ubuntu Linux going from the Ryzen 9 7950X to 9950X. Ubuntu 24.04 LTS each time was faster than Windows 11. The Ryzen 9 7950X saw a larger boost switching to Linux from Windows 11 than the closer results on the Ryzen 9 9950X.
+Kvazaar benchmark with settings of Video Input: Bosphorus 4K, Video Preset: Slow. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+With the Kvazaar H.265 video encoder there was slightly better 7950X to 9950X uplift on Linux. Under Windows with the H.265 4K slow video encoding was a 5.9% improvement on Windows 11 but 8.4% under Ubuntu Linux.
+Kvazaar benchmark with settings of Video Input: Bosphorus 4K, Video Preset: Medium. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+With 4K content encoded at the medium preset with Kvazaar, Windows 11 with the Ryzen 9 9950X was 6% faster while Ubuntu was 8.3% faster with the Zen 5 desktop processor.
+Kvazaar benchmark with settings of Video Input: Bosphorus 4K, Video Preset: Ultra Fast. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+Kvazaar H.265 encoding consistently was seeing more uplift on Linux when going from the Ryzen 9 7950X to 9950X.
+Kvazaar benchmark with settings of Video Input: Bosphorus 1080p, Video Preset: Slow. Windows 11: Ryzen 9 9950X was the fastest.
+
+With 1080p video encoding content, the Ryzen 9 7950X to 9950X uplift was around 8% for Windows and 11% for Linux, but Windows 11 was overall faster at 1080p encoding than Ubuntu Linux.
+Kvazaar benchmark with settings of Video Input: Bosphorus 1080p, Video Preset: Medium. Windows 11: Ryzen 9 9950X was the fastest.
+Kvazaar benchmark with settings of Video Input: Bosphorus 4K, Video Preset: Very Fast. Windows 11: Ryzen 9 9950X was the fastest.
+Kvazaar benchmark with settings of Video Input: Bosphorus 4K, Video Preset: Super Fast. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+While Linux was faster than Windows at 4K video encoding with Kvazaar, at 1080p encoding it flipped around and Windows 11 was faster. Presumably due to CPU frequency scaling driver/governor behavior differences between the two operating systems. With the video encoders I've seen a great deal of differing results if opting for non-default CPU frequency scaling governor / driver settings. But in any even at 1080p there continued to be greater uplift for the 7950X to 9950X on Linux by a few percent.
+Kvazaar benchmark with settings of Video Input: Bosphorus 1080p, Video Preset: Very Fast. Windows 11: Ryzen 9 9950X was the fastest.
+Kvazaar benchmark with settings of Video Input: Bosphorus 1080p, Video Preset: Ultra Fast. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+The Appleseed renderer binaries on each OS showed more uplift for the "Emily" scene with going from the Ryzen 9 7950X to 9950X on Linux than there was with little change under Windows 11 between these two processors.
+Appleseed benchmark with settings of Scene: Disney Material. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+But with the Disney Material scene rendered by Appleseed, there was healthy Zen 4 to Zen 5 uplift on each OS.
+Chaos Group V-RAY benchmark with settings of Mode: CPU. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+With the proprietary V-RAY application, there was healthy and similar uplift on each operating system when upgrading from the Ryzen 9 7950X to 9950X. However, the Linux performance with each processor was faster than on Windows 11.
+Geometric Mean Of All Test Results benchmark with settings of Result Composite, Windows 11 vs. Ubuntu Linux On AMD Ryzen 9 9950X. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+When taking the geometric mean of 73 benchmarks run for this comparison, upgrading from the Ryzen 9 7950X to 9950X on Ubuntu 24.04 LTS yielded a 14% generational improvement with this set of cross-platform applications/benchmarks while under Windows 11 was a 10% generational improvement. The raw performance of Ubuntu Linux on the AMD Ryzen processors also was greater overall to the extent of the Ryzen 9 7950X to Ubuntu 24.04 LTS nearly matching the Ryzen 9 9950X on Microsoft Windows 11.
+
+In some cases like video encoding and some Intel oneAPI packages there were clearly cases of the Zen 5 processor scaling much more on Linux than with Windows. In other applications it was a toss-up. But at least in some areas we did indeed see Linux offering more uplift when going from the Ryzen 9 7950X to 9950X than when testing the same applications under Windows 11. But in any event this is just a small look at things due to my primary focus on Linux performance and many of my other benchmarks not natively supporting Windows, etc. If there is enough interest I may also explore the Zen 5 performance under Windows Subsystem for Linux and other areas. I'll also be looking at the Windows/Linux gaming performance but there it's not as clear-cut given the graphics driver differences, API translation overhead on Linux, etc. There are also other areas on my TODO list to explore such as the Ryzen 9 9950X impact with AMD P-State / CPU frequency scaling governor tuning, exploring Linux distributions with x86_64 micro-architecture feature level builds on Zen 5, and other modifications to try to push the Linux performance further.
+
+With the OSPRay Studio application and using the official binaries on each platform, Ubuntu 24.04 LTS was faster on both AMD Ryzen processors and tended to overall have slightly greater uplift going from the Ryzen 9 7950X to 9950X processors.
+With Windows 11 going from the Ryzen 9 7950X to 9950X was a 5% boost while on Ubuntu 24.04 LTS the performance went up by 9%. The Ubuntu 24.04 LTS raw performance was greater to the extent of a Ryzen 9 7950X on Linux outperforming the Ryzen 9 9950X on Windows.
+
+Geometric Mean Of All Test Results benchmark with settings of Result Composite, Windows 11 vs. Ubuntu Linux On AMD Ryzen 9 9950X. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+I think Ryzen 99950X performance is the best. But it's hindered by subpar Windows code.

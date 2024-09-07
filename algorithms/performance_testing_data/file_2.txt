@@ -1,0 +1,23 @@
+With Intel's Embree ray-tracing kernels using the Intel ISPC built version on each OS, there was around an 8% performance uplift going from the 7950X to 9950X on each operating system. But the Ubuntu Linux performance continued to lead in raw performance to the extent of the Ryzen 9 7950X on Linux was similar to the Ryzen 9 9950X performance on Windows 11.
+Embree benchmark with settings of Binary: Pathtracer ISPC, Model: Asian Dragon. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+With the "Asian Dragon" scene being rendered by Embree binaries on each OS, under Linux was a greater generational uplift. Going from the Ryzen 9 7950X to 9950X on Windows was a 13.6% improvement but under Linux that was a 18.3% improvement while the Linux performance was also faster than Windows overall.
+Embree benchmark with settings of Binary: Pathtracer ISPC, Model: Asian Dragon Obj. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+The greater generational uplift on Ubuntu 24.04 LTS going from the Ryzen 9 7950X to 9950X was also observed on another render scene with Intel Embree.
+With WebP image encoding there were generational improvements on both Windows 11 and Ubuntu Linux going from the Ryzen 9 7950X to 9950X. Ubuntu 24.04 LTS each time was faster than Windows 11. The Ryzen 9 7950X saw a larger boost switching to Linux from Windows 11 than the closer results on the Ryzen 9 9950X.
+Kvazaar benchmark with settings of Video Input: Bosphorus 4K, Video Preset: Slow. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+With the Kvazaar H.265 video encoder there was slightly better 7950X to 9950X uplift on Linux. Under Windows with the H.265 4K slow video encoding was a 5.9% improvement on Windows 11 but 8.4% under Ubuntu Linux.
+Kvazaar benchmark with settings of Video Input: Bosphorus 4K, Video Preset: Medium. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+With 4K content encoded at the medium preset with Kvazaar, Windows 11 with the Ryzen 9 9950X was 6% faster while Ubuntu was 8.3% faster with the Zen 5 desktop processor.
+Kvazaar benchmark with settings of Video Input: Bosphorus 4K, Video Preset: Ultra Fast. Ubuntu 24.04: Ryzen 9 9950X was the fastest.
+
+Kvazaar H.265 encoding consistently was seeing more uplift on Linux when going from the Ryzen 9 7950X to a 9950X.
+Kvazaar benchmark with settings of Video Input: Bosphorus 1080p, Video Preset: Slow. Windows 11: Ryzen 9 9950X was the fastest.
+
+With Full HD video encoding content, the Ryzen 9 7950X to 9950X uplift was around 8% for Windows and 11% for Linux, but Windows 11 was overall faster at 1080p encoding than Ubuntu Linux.
+
+So let's take a look at how I am seeing Windows 11 running on the Ryzen 9 9950X (and 7950X) with my productivity-minded tests against Ubuntu 24.04 LTS.
+

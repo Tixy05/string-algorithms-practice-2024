@@ -1,0 +1,13 @@
+Submitted today via DRM-Misc-Next to DRM-Next for staging ahead of the Linux 6.12 merge window in mid-September is optional support for displaying a QR code within the DRM Panic handler infrastructure when a Linux kernel panic occurs.
+
+As written about back in early July, there's been work for showing a QR code error when Linux DRM Panic "Screen of Death" errors occur. This can be much more convenient and user-friendly when a panic occurs. Right now kernel panic messages tend to get chopped off the screen's display when being output and a QR code is able to capture a lot of information that may otherwise be hard to capture from the simple text-based output.
+
+QR panic example
+
+This isn't the first time that QR codes for kernel errors have been thought of as it was discussed years ago and other operating systems have done so as well.
+
+With today's drm-misc-next pull request that QR code support for DRM panic has been queued for introduction in Linux 6.12 when using the DRM Panic handler on supported drivers.
+
+DRM QR options
+
+This QR code support is written in the Rust programming language and thus the Rust kernel build must be enabled for the support. The support is guarded by the DRM_PANIC_SCREEN_QR_CODE Kconfig build switch. There is also support for specifying a QR code base URL and QR version for the amount of debugging data that can be archived.
