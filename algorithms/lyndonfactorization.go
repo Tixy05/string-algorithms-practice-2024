@@ -1,7 +1,11 @@
 package algorithms
 
-func LyndonFactorization(s string) []string {
-	res := []string{}
+type lyndonSubstring struct {
+	start, end int
+}
+
+func LyndonFactorization(s []rune) []lyndonSubstring {
+	res := []lyndonSubstring{}
 	n := len(s)
 	i := 0
 	for i < n {
@@ -16,7 +20,7 @@ func LyndonFactorization(s string) []string {
 			k++
 		}
 		for i <= j {
-			res = append(res, s[i:i+k-j])
+			res = append(res, lyndonSubstring{i, i + k - j - 1})
 			i += k - j
 		}
 	}
