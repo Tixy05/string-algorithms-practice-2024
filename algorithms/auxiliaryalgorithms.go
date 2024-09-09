@@ -2,7 +2,7 @@ package algorithms
 
 // Memory consumption was sacraficed for simplicity/readability/sanity reasons
 // (but still O(n) theoretically :))
-func innnerSuffixArray(s []rune, suffixArray []int, alphabetSize int) {
+func innnerSuffixArray(s []rune, suffixArray []int, alphabetSize int) { //nolint:all
 	isSString := make([]bool, len(s)+1)
 
 	isLMSChar := make([]bool, len(s)+1)
@@ -100,7 +100,6 @@ func innnerSuffixArray(s []rune, suffixArray []int, alphabetSize int) {
 		}
 	}
 
-	//
 	for i := len(p1) - 1; i >= 0; i-- {
 		v := p1[i]
 		bucketTailsIndex := 0
